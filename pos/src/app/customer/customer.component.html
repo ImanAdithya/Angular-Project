@@ -6,17 +6,17 @@
 
         <div class="form-group">
             <label>Name</label>
-            <input  [(ngModel)]="empName" [ngModelOptions]="{standalone:true}" type="text" class="form-control" placeholder="Name">
+            <input  [(ngModel)]="name" [ngModelOptions]="{standalone:true}" type="text" class="form-control" placeholder="Name">
         </div>
 
         <div class="form-group">
           <label>Address</label>
-          <input  [(ngModel)]="empAddress"  [ngModelOptions]="{standalone:true}"   type="text" class="form-control" placeholder="Address">
+          <input  [(ngModel)]="address"  [ngModelOptions]="{standalone:true}"   type="text" class="form-control" placeholder="Address">
       </div>
 
       <div class="form-group">
         <label>Mobile</label>
-        <input  [(ngModel)]="empMobile"   [ngModelOptions]="{standalone:true}"   type="text" class="form-control" placeholder="Mobile">
+        <input  [(ngModel)]="mobile"   [ngModelOptions]="{standalone:true}"   type="text" class="form-control" placeholder="Mobile">
     </div>
 
     <br/>
@@ -52,11 +52,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>John</td>
-          <td>Matara</td>
-          <td>0778436743</td>
+        <tr *ngFor="let EmployeeDetails of EmployeeArray">
+          <th scope="row">{{EmployeeDetails.employeeId}}</th>
+          <td>{{EmployeeDetails.name}}</td>
+          <td>{{EmployeeDetails.address}}</td>
+          <td>{{EmployeeDetails.mobile}}</td>
           <td>
             <button class="btn btn-primary">Edit</button>
             <button class="btn btn-danger">Delete</button>
