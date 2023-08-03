@@ -24,7 +24,7 @@ export class CustomerComponent {
   }
 
   getAllCustomer(){
-    this.http.get("http://localhost:8082/api/v1/employee/").subscribe((resultDate:any)=>{
+    this.http.get("http://localhost:8082/api/v1/employee/getAllEmployee").subscribe((resultDate:any)=>{
       this.isResultReloaded=resultDate;
       console.log(resultDate);
       this.EmployeeArray=resultDate;
