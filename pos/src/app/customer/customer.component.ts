@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
+  EmployeeArray :any[]=[];
+
+
+
+  employeeName: string="";
+  employeeAdderss: string="";
+  mobile: Number=0;
+
 
 }
