@@ -32,7 +32,6 @@ export class CustomerComponent {
   }
 
   register(){
-
     let bodyData={
       "name":this.name,
       "address":this.address,
@@ -44,11 +43,22 @@ export class CustomerComponent {
       alert("Employee Added Succuss");
       this.getAllEmployee();
 
-
       this.name='';
       this.address='';
       this.mobile=0;
     })
   }
+
+  clearFeilds(){
+    this.name='';
+    this.address='';
+    this.mobile=0;
+  }
+
+  setUpdate(){
+
+  }
+
+
 
 }
