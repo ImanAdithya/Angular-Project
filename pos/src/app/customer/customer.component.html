@@ -23,7 +23,7 @@
 
     <div class="form-group">
       <button  type="reset" class="btn btn-danger pull-right" (click)="clearFeilds()">Clear</button>&nbsp;
-      <button  type="button" class="btn btn-primary pull-right" (click)="register()">Save</button>
+      <button  type="button" class="btn btn-primary pull-right" (click)="save()">Save</button>
     </div>
 
     </form>
@@ -58,7 +58,7 @@
           <td>{{EmployeeDetails.address}}</td>
           <td>{{EmployeeDetails.mobile}}</td>
           <td>
-            <button class="btn btn-primary">Edit</button>&nbsp;
+            <button class="btn btn-primary" (click)="setUpdate(EmployeeDetails)">Edit</button>&nbsp;
             <button class="btn btn-danger">Delete</button>
           </td>
         </tr>

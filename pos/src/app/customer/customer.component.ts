@@ -55,9 +55,42 @@ export class CustomerComponent {
     this.mobile=0;
   }
 
-  setUpdate(){
-
+  setUpdate(data:any){
+    this.name=data.name;
+    this.address=data.address;
+    this.mobile=data.mobile;
+    this.currentEmployeID=data.employeeId;
   }
+
+  updateEmployee(){
+    let bodyData={
+      "employeeId":this.currentEmployeID,
+      "name":this.name,
+      "address":this.address,
+      "mobile":this.mobile
+    };
+
+    this.http.put("http://localhost:8082/api/v1/employee/update",bodyData,{responseType:'text'}).subscribe((resultData:any)=>{
+
+      console.log(resultData);
+      alert("Employee Updated Succuss");
+      this.getAllEmployee();
+
+      this.name='';
+      this.address='';
+      this.mobile=0;
+
+    });
+  }
+
+  save(){
+    if(this.currentEmployeID == ''){
+      this.register();
+    }else{
+      this.updateEmployee();
+    }
+  }
+
 
 
 
