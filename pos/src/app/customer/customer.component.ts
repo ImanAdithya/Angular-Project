@@ -95,6 +95,7 @@ export class CustomerComponent {
     this.http.delete("http://localhost:8082/api/v1/employee/delete"+"/"+data.employeeId,{responseType:'text'}).subscribe((resultData:any)=>{
 
     console.log(resultData);
+    alert("Employee Delete Succuss");
     this.getAllEmployee();
 
       this.name='';
