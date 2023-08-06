@@ -91,6 +91,20 @@ export class CustomerComponent {
     }
   }
 
+  deleteEmployee(data:any){
+    this.http.delete("http://localhost:8082/api/v1/employee/delete"+"/"+data.employeeId,{responseType:'text'}).subscribe((resultData:any)=>{
+
+    console.log(resultData);
+    this.getAllEmployee();
+
+      this.name='';
+      this.address='';
+      this.mobile=0;
+    });
+  }
+
+
+
 
 
 
